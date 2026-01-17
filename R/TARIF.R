@@ -37,7 +37,7 @@ TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 {
   library(PMA)
   R=jefs[[2]] #rbind the list of matrices.
-
+  
   pro.list <- vector("list", length = jefs[[1]])
   n1=pro_name
   c1=lower
@@ -48,7 +48,7 @@ TASTE.S=function(pro_name,jefs,lower,upper,gamma)
     l=c2+1
     z=1
     while (l<c1 || l>c2 && z< pp^0.25) {
-      tt1=SPC(h_sub2,sumabsv=z, K=1)
+      tt1=SPC(R,sumabsv=z, K=1)
       l=length(tt1$v[tt1$v!=0])
       z=z+gamma
     }
@@ -69,16 +69,16 @@ TASTE=function(matrices,mi=20,status="False",lowl=30,upl=100,gamma=0.1)
   if (!all(sapply(matrices, is.matrix))) {
     stop("All inputs must be matrices.")
   }
-
+  
   hm=harmonize_matrices(matrices)
-
+  
   if (is.null(hm)) {
     stop("No common columns found.")
   }
   #pro_name=colnames(hm[[1]])
-
-  jx=TARIF.D(hm,mi,status)
-
-  protein_list=TARIF.S(colnames(hm[[1]]),jx,lowl,upl,gamma)
+  
+  jx=TASTE.D(hm,mi,status)
+  
+  protein_list=TASTE.S(colnames(hm[[1]]),jx,lowl,upl,gamma)
   return(protein_list)
 }
