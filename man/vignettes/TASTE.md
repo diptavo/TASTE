@@ -1,4 +1,4 @@
-## 1. Overview
+## 1. Overview:
 Increasing evidence suggests that related cancers share alterations of
 common regulatory programs.  Trans-associations of cancer risk variants mediated via
 molecular phenotypes, such as gene expression and protein levels, can help uncover
@@ -11,7 +11,7 @@ sparse singular value decomposition to identify proteins driving shared effects;
 **TASTE-T**, a competitive testing strategy for evaluating significance of trans-associations
 captured by the identified protein-set.  This vignettes will demonstrate how to use **TASTE** package in R to extract the  set of proteins that are  associated with sets of biologically related cancers.
 
-## 2. Input Data Format
+## 2. Input Data Format:
 
 ```r
 harmonize_matrices <- function(matrices) {
@@ -32,7 +32,7 @@ harmonize_matrices <- function(matrices) {
 
 The inputs are list of matrices corresponding to a group of cancer( example- genitourinary cancers).  Each matrices of the list corresponds to a cancer type ((renal cell carcinoma [RCC] and bladder cancer [BLCA]).  Each column of the matrix should represent Protein ID and each row should represent summary statistics (Z-values) from standard trans-pQTL analysis.  Different matrices may contain overlapping but not identical protein panels.  The function  **harmonize_matrices()** alings all matrices with the common set of Proteins.  If no such common proteins are founds, the function stops with the message **No common columns found**.
 
-## 3. Low Rank Decomposition for the Estimation of the Joint Structure
+## 3. Low Rank Decomposition for the Estimation of the Joint Structure:
 
 ```r
 TASTE.D=function(matrices,mi,status)
@@ -49,7 +49,7 @@ TASTE.D=function(matrices,mi,status)
 This function is used for estimating the joint structure via a low rank decomposition using JIVE in r.jive package.  It takes input as (harmonized) list of matrices and parameters of JIVE (**maxiter**: The maximum number of iterations for each instance of the JIVE algorithm ,**showProgress** : 	
 A boolean indicating whether or not to give output showing the progress of the algorithm.) and returns the **rank of the joint effect matrices** and the **joint matrix** as a list.
 
-## 4. Protein Selection
+## 4. Protein Selection:
 
 ```r
 TASTE.S=function(pro_name,jefs,lower,upper,gamma)
@@ -83,4 +83,6 @@ TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 }
 ```
 
-This function takes into input **pro_name**: common protein ID, **jefs** : list that contains rank of the joint effect matrices and joint matrix as its first and second elemnt, **lower**: lower limit of the $l_0$ norm of the vector v a sparse loading vector, corresponding to columns of joint matrix. , **upper**: upper limit of the l-0 norm of the vector v a sparse loading vector, corresponding to columns of joint matrix. , **gamma**: step size.  It extracts the proteins that drives the joint structure by performing a variant of sparse principle component analysis via PMA package.
+This function takes into input **pro_name**: common protein ID, **jefs** : list that contains rank of the joint effect matrices and joint matrix as its first and second elemnt, **lower**: lower limit of the $l_0$ norm of the vector v a sparse loading vector, corresponding to columns of joint matrix. , **upper**: upper limit of the $l_0$ norm of the vector v a sparse loading vector, corresponding to columns of joint matrix. , **gamma**: step size.  It extracts the proteins that drives the joint structure by performing a variant of sparse principle component analysis via PMA package.
+
+## 5. Full Pipeline Function:
