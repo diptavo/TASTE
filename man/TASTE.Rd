@@ -9,7 +9,7 @@ TASTE(
   status = "False",
   lower = 30,
   upper = 100,
-  gamma
+  gamma=0.1
 )
 }
 \description{
