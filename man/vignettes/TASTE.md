@@ -31,7 +31,7 @@ harmonize_matrices <- function(matrices) {
 }
 ```
 
-The inputs are list of matrices corresponding to a group of cancer( example- genitourinary cancers).  Each matrices of the list corresponds to a cancer type ((renal cell carcinoma [RCC] and bladder cancer [BLCA]).  Each column of the matrix should represent Protein ID and each row should represent summary statistics (Z-values) from standard trans-pQTL analysis.  Different matrices may contain overlapping but not identical protein panels.  The function  **harmonize_matrices()** alings all matrices with the common set of Proteins.  If no such common proteins are founds, the function stops with the message **No common columns found**.
+The inputs are list of matrices corresponding to a group of cancer( example- genitourinary cancers).  Each matrices of the list corresponds to a cancer type ((renal cell carcinoma [RCC] and bladder cancer [BLCA]).  Each column of the matrix should represent Protein ID and each row should represent summary statistics (Z-values) from standard trans-pQTL analysis.  Different matrices may contain overlapping but not identical protein panels.  The function  **harmonize_matrices()** alings all matrices with the common set of Proteins.  If no such common proteins are founds, the function stops with the message **No common columns found**.  In addition, this function also removes the rows which have missing entries.
 
 ## 3. Low Rank Decomposition for the Estimation of the Joint Structure:
 
