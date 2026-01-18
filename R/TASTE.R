@@ -1,6 +1,8 @@
 #' function to harmonize the matrices (Step1)
 #' @param matrices A list of two or more matrices of z-statistics of corresponding to two or more groups.
+
 #' @export
+
 harmonize_matrices <- function(matrices) {
   # Find the common column names
   com_cols <- Reduce(intersect, lapply(matrices, colnames))
@@ -20,6 +22,7 @@ harmonize_matrices <- function(matrices) {
 #' @param status A boolean indicating whether or not to give output showing the progress of the JIVE algorithm. If TRUE, the algorithm will print out updates about the number of iterations the algorithm is taking and the progress of the rank selection method, if applicable. If FALSE, the algorithms will give no printed output when run.
 
 #' @export
+
 TASTE.D=function(matrices,mi,status)
 {
   library(r.jive)
@@ -36,6 +39,7 @@ TASTE.D=function(matrices,mi,status)
 #' @param gamma step-size.
 
 #' @export
+
 TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 {
   library(PMA)
@@ -66,7 +70,9 @@ TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 }
 
 #' overall procedure
+
 #' @export
+
 TASTE=function(matrices,mi=20,status="False",lower=30,upper=100,gamma=0.1)
 {
   # Check if the input is a list of matrices
