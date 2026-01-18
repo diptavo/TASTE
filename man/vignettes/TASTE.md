@@ -14,7 +14,6 @@ captured by the identified protein-set.  This vignettes will demonstrate how to 
 ## 2. Input Data Format
 
 ```r
-
 harmonize_matrices <- function(matrices) {
   
   com_cols <- Reduce(intersect, lapply(matrices, colnames))
@@ -29,8 +28,7 @@ harmonize_matrices <- function(matrices) {
   })
   return(updated_matrices)
 }
-
-,,,
+```
 
 The inputs are list of matrices corresponding to a group of cancer( example- genitourinary cancers).  Each matrices of the list corresponds to a cancer type ((renal cell carcinoma [RCC] and bladder cancer [BLCA]).  Each column of the matrix should represent Protein ID and each row represents summary statistics (Z-values) from standard trans-pQTL analysis.  Different matrices may contain overlapping but not identical protein panels.  The function  **harmonize_matrices()** alings all matrices with the common set of Proteins.  If no such common proteins are founds, the function stops with the message **No common columns found**.
 
