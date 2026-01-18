@@ -1,8 +1,1 @@
-```{r data-illustration}
-library(TASTE)
 
-dat <- readRDS(system.file("extdata", "data_illustration.rds", package = "TASTE"))
-
-res <- TASTE(dat)
-res
-```
