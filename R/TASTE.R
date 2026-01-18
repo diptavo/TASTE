@@ -63,6 +63,7 @@ TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 }
 
 #' overall procedure
+#' @export
 TASTE=function(matrices,mi=20,status="False",lower=30,upper=100,gamma=0.1)
 {
   # Check if the input is a list of matrices
