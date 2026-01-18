@@ -1,4 +1,4 @@
-exports(harmonize_matrices)
-exports(TASTE.D)
-exports(TASTE.S)
-exports(TASTE)
+export(harmonize_matrices)
+export(TASTE.D)
+export(TASTE.S)
+export(TASTE)
