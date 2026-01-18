@@ -86,3 +86,27 @@ TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 This function takes into input **pro_name**: common protein ID, **jefs** : list that contains rank of the joint effect matrices and joint matrix as its first and second elemnt, **lower**: lower limit of the $l_0$ norm of the vector v a sparse loading vector, corresponding to columns of joint matrix. , **upper**: upper limit of the $l_0$ norm of the vector v a sparse loading vector, corresponding to columns of joint matrix. , **gamma**: step size.  It extracts the proteins that drives the joint structure by performing a variant of sparse principle component analysis via PMA package.
 
 ## 5. Full Pipeline Function:
+
+```r
+TASTE=function(matrices,mi=20,status="False",lower=30,upper=100,gamma=0.1)
+{
+  # Check if the input is a list of matrices
+  if (!all(sapply(matrices, is.matrix))) {
+    stop("All inputs must be matrices.")
+  }
+  
+  hm=harmonize_matrices(matrices)
+  
+  if (is.null(hm)) {
+    stop("No common columns found.")
+  }
+  #pro_name=colnames(hm[[1]])
+  
+  jx=TASTE.D(hm,mi,status)
+  
+  protein_list=TASTE.S(colnames(hm[[1]]),jx,lower,upper,gamma)
+  return(protein_list)
+}
+```
+
+The complete workflow is implemented in the function TASTE().
