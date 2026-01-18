@@ -15,17 +15,18 @@ captured by the identified protein-set.  This vignettes will demonstrate how to 
 
 ```r
 harmonize_matrices <- function(matrices) {
-  
+  # Find the common column names
   com_cols <- Reduce(intersect, lapply(matrices, colnames))
-  
+  # If no common columns are found
   if (length(com_cols) == 0) {
     message("No common columns found.")
     return(NULL)
   }
- 
-  updated_matrices <- lapply(matrices, function(mat) {
+   # Subset matrices to include only the common columns
+  um <- lapply(matrices, function(mat) {
     mat[, com_cols, drop = FALSE]
   })
+  updated_matrices=lapply(um,na.omit)  
   return(updated_matrices)
 }
 ```
