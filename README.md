@@ -4,4 +4,6 @@
 ## 2.  Installation
 
 ```r
+install.packages("devtools")
+devtools::install_github("diptavo /TASTE")
 ```
