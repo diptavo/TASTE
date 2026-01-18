@@ -13,7 +13,7 @@ captured by the identified protein-set.  This vignettes will demonstrate how to 
 
 ## 2. Input Data Format
 
-'''r
+```r
 
 harmonize_matrices <- function(matrices) {
   
