@@ -14,23 +14,21 @@ captured by the identified protein-set.  This vignettes will demonstrate how to 
 ## 2. Input Data Format
 
 '''r
-#' function to harmonize the matrices (Step1)
-#' @param matrices A list of two or more matrices of z-statistics of corresponding to two or more groups.
+
 harmonize_matrices <- function(matrices) {
-  # Find the common column names
+  
   com_cols <- Reduce(intersect, lapply(matrices, colnames))
-  # If no common columns are found
+  
   if (length(com_cols) == 0) {
     message("No common columns found.")
     return(NULL)
   }
-  # Subset matrices to include only the common columns
+ 
   updated_matrices <- lapply(matrices, function(mat) {
     mat[, com_cols, drop = FALSE]
   })
   return(updated_matrices)
 }
 
-,,,
 
 
