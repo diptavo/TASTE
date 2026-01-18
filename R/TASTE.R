@@ -63,7 +63,7 @@ TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 }
 
 #' overall procedure
-TASTE=function(matrices,mi=20,status="False",lowl=30,upl=100,gamma=0.1)
+TASTE=function(matrices,mi=20,status="False",lower=30,upper=100,gamma=0.1)
 {
   # Check if the input is a list of matrices
   if (!all(sapply(matrices, is.matrix))) {
@@ -79,6 +79,6 @@ TASTE=function(matrices,mi=20,status="False",lowl=30,upl=100,gamma=0.1)
   
   jx=TASTE.D(hm,mi,status)
   
-  protein_list=TASTE.S(colnames(hm[[1]]),jx,lowl,upl,gamma)
+  protein_list=TASTE.S(colnames(hm[[1]]),jx,lower,upper,gamma)
   return(protein_list)
 }
