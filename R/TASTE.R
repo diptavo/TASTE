@@ -11,10 +11,11 @@ harmonize_matrices <- function(matrices) {
     message("No common columns found.")
     return(NULL)
   }
-  # Subset matrices to include only the common columns
-  updated_matrices <- lapply(matrices, function(mat) {
+   # Subset matrices to include only the common columns
+  um <- lapply(matrices, function(mat) {
     mat[, com_cols, drop = FALSE]
   })
+  updated_matrices=lapply(um,na.omit)  
   return(updated_matrices)
 }
 #' function to run JIVE (Step2)
