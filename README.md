@@ -6,4 +6,7 @@
 ```r
 install.packages("devtools")
 devtools::install_github("diptavo /TASTE")
+
+#Load package
+library(TASTE)
 ```
