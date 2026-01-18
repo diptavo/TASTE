@@ -17,4 +17,4 @@ library(TASTE)
 dat <- readRDS(system.file("extdata", "data_illustration.rds", package = "TASTE"))
 ```
 
-A detailed description of the method, input format, and example analysis is provided in the package tutorial: **[vignette/TASTE](TASTE.md)**
+A detailed description of the method, input format, and example analysis is provided in the package tutorial: **[Vignette/TASTE](TASTE.md)**
