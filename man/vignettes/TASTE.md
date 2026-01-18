@@ -112,6 +112,6 @@ TASTE=function(matrices,mi=20,status="False",lower=30,upper=100,gamma=0.1)
 
 The complete workflow is implemented in the function TASTE().
 
-## 6.  Data Illustration:
+## 6.  Data Illustration
 
 
