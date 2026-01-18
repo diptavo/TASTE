@@ -3,7 +3,7 @@
 
 #' @export
 
-'harmonize_matrices' <- function(matrices) {
+harmonize_matrices <- function(matrices) {
   # Find the common column names
   com_cols <- Reduce(intersect, lapply(matrices, colnames))
   # If no common columns are found
@@ -23,7 +23,7 @@
 
 #' @export
 
-'TASTE.D'=function(matrices,mi,status)
+TASTE.D=function(matrices,mi,status)
 {
   library(r.jive)
   rr=jive(matrices,maxiter=mi,showProgress=status)
@@ -40,7 +40,7 @@
 
 #' @export
 
-'TASTE.S'=function(pro_name,jefs,lower,upper,gamma)
+TASTE.S=function(pro_name,jefs,lower,upper,gamma)
 {
   library(PMA)
   R=jefs[[2]] #rbind the list of matrices.
@@ -73,7 +73,7 @@
 
 #' @export
 
-'TASTE'=function(matrices,mi=20,status="False",lower=30,upper=100,gamma=0.1)
+TASTE=function(matrices,mi=20,status="False",lower=30,upper=100,gamma=0.1)
 {
   # Check if the input is a list of matrices
   if (!all(sapply(matrices, is.matrix))) {
