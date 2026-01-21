@@ -15,11 +15,14 @@ driving shared effects; (3) **TASTE-T**, a competitive testing strategy
 for evaluating significance of trans-associations captured by the
 identified protein-set. This vignettes will demonstrate how to use
 **TASTE** package in R to extract the set of proteins that are
-associated with sets of biologically related cancers. 
+associated with sets of biologically related cancers.  The Illustration of the 
+**TASTE** analysis pipeline is given below.
 <p align="center">
   <img src="workflow.png" width="700">
 </p>
-
+This vignettes will demonstrate how to use
+**TASTE** package in R to extract the set of proteins that are
+associated with sets of biologically related cancers.
 
 ## 2. Input Data Format:
 
