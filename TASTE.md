@@ -17,7 +17,7 @@ identified protein-set. This vignettes will demonstrate how to use
 **TASTE** package in R to extract the set of proteins that are
 associated with sets of biologically related cancers. 
 <p align="center">
-  <img src="workflow.png" width="600">
+  <img src="workflow.png" width="700">
 </p>
 
 
