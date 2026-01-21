@@ -11,7 +11,7 @@ devtools::install_github("diptavo /TASTE")
 library(TASTE)
 ```
 ## Data for Illustration:
-**TASTE** comes with an illustrative data set that can be loaded directly after installing and loading the package.
+**TASTE** comes with an illustrative data set that can be loaded directly after installing and loading the package.  The dataset contains summary statistics for three blood-related cancers, corresponding to 2,815, 2,829, and 2,858 proteins, respectively.  There are 2,698 proteins that are common across all three cancer groups.  **TASTE** identifies the protein sets that are transregulated by genetic variants associated with the given set of blood cancer.
 
 ```r
 dat <- readRDS(system.file("extdata", "data_illustration.rds", package = "TASTE"))
