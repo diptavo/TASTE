@@ -20,6 +20,7 @@ associated with sets of biologically related cancers.  The Illustration of the
 <p align="center">
   <img src="workflow.png" width="700">
 </p>
+
 This vignettes will demonstrate how to use
 **TASTE** package in R to extract the set of proteins that are
 associated with sets of biologically related cancers.
